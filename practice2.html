@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = () => {
+            var upHandler = document.querySelector('#txt');
+            var bUp = document.getElementById("up");
+            
+            bUp.addEventListener('click',up)
+            function up(){
+                upHandler.value = Number(upHandler.value) + 1;
+            }
+            
+            var bDown = document.getElementById("down");
+            
+            bDown.addEventListener('click',down)
+            function down(){
+                upHandler.value = Number(upHandler.value) - 1;
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    갯수
+    <input type="text" id="txt" name="txt" value="1">
+    <button id="up">+</button>
+    <button id="down">-</button>
+
+</body>
+</html>

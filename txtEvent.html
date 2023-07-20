@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            
+            var tArea = document,getElementById("text_area");
+            tArea.addEventListener("keydown",areaHandler);
+
+            function areaHandler(){
+                var text = document.getElementById("text_area").value;
+                document.getElementById("result").innerHTML = text.length;
+            }
+        }
+    </script>    
+</head>
+<body>
+
+    <hr>
+    글자수 세기<br>
+    <textarea id="text_area" rows="10" cols="10" ></textarea><br>
+    입력문자수:<span id="result">0</span>
+   <hr>
+   증감<input type="text" id="quantity" value="1">
+    <button id="up" >+</button>
+    <button id="down">-</button>
+
+    
+    <!-- <h3>글자수 세기</h3>
+    <textarea id="inputText" rows="20" cols="25" style="border: 2px solid blue";></textarea>
+    <p>입력 문자 수: <span id="charCount">0</span></p>
+
+    <script>
+        // textarea 입력이 변경될 때마다 글자 수를 세는 함수
+        function countChar() {
+            const inputText = document.getElementById("inputText").value;
+            const charCount = document.getElementById("charCount");
+
+            charCount.textContent = inputText.length;
+        }
+
+        
+        document.getElementById("inputText").addEventListener("input", countChar);
+    </script> -->
+</body>
+</html>

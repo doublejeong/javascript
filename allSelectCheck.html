@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+    //     function check(n) {
+    //     var lang = document.querySelectorAll(".lang");
+    //     for (var i = 0; i < lang.length; i++) {
+    //         lang[i].checked = n.checked;
+    //     }
+    // }
+window.onload = function(){
+
+    var checkLang = document.getElementById("all_check");
+        checkLang.addEventListener("click",checkHandler);
+
+        function checkHandler(){
+            var checks = document.getElementsByClassName("lang");
+            
+            for (var i = 0; i < checks.length; i++) {
+                checks[i].checked = document.getElementById("all_check").checked;
+            }
+        }
+}
+    </script>    
+</head>
+<body>
+    <!-- 전체선택
+    <input type = "checkbox" name = "all" onclick="check(this)"><br>
+    <input type = "checkbox" name = "java" class="lang">java<br>
+    <input type = "checkbox" name = "sql" class="lang">sql<br>
+    <input type = "checkbox" name = "angular" class="lang">angular<br> -->
+
+    전체선택:<input type="checkbox" id="all_check" name="all" ><br>
+
+    <input type="checkbox" name="lang" class="lang">java<br>
+    <input type="checkbox" name="lang" class="lang">sql<br>
+    <input type="checkbox" name="lang" class="lang">angular<br>
+
+
+
+</body>
+</html>

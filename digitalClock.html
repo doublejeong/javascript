@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <script>
+
+    window.onload = function() {
+        function setClock(){
+            var date = new Date();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+
+            document.body.innerHTML = hour + ":" + min + ":" + sec;
+
+        }
+        setInterval(setClock,1000)
+    }
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
