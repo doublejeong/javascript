@@ -7,7 +7,7 @@
     <script>
         window.onload = function(){
             
-            var tArea = document,getElementById("text_area");
+            var tArea = document.getElementById("text_area");
             tArea.addEventListener("keydown",areaHandler);
 
             function areaHandler(){
@@ -23,8 +23,8 @@
     글자수 세기<br>
     <textarea id="text_area" rows="10" cols="10" ></textarea><br>
     입력문자수:<span id="result">0</span>
-   <hr>
-   증감<input type="text" id="quantity" value="1">
+    <hr>
+    증감<input type="text" id="quantity" value="1">
     <button id="up" >+</button>
     <button id="down">-</button>
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "http://3.37.128.156:9999/hjs/rboard/list",
+                    async: false,
+                    success: function (result) {
+                        console.log("통신 성공");
+                        console.log(result);
+
+                        $("#list-table").append(
+                            $("<tr></tr>")
+                                .append($("<td></td>").text("번호"))
+                                .append($("<td></td>").text("이름"))
+                                .append($("<td></td>").text("제목"))
+                                .append($("<td></td>").text("날짜"))
+                                .append($("<td></td>").text("히트"))
+                                .append($("<td></td>").text("삭제"))
+                        );
+
+                        $(result).each(function (index, item) {
+                            $("#list-table").append(
+                                $("<tr></tr>")
+                                    .append($("<td></td>").text(item.bid))
+                                    .append($("<td></td>").text(item.bname))
+                                    .append($("<td></td>").text(item.btitle))
+                                    .append($("<td></td>").text(item.bdate))
+                                    .append($("<td></td>").text(item.bhit))
+
+                                    .append(
+                                        $("<td></td>").append(
+                                            $("<input></input>")
+                                                .attr("id", item.no)
+                                                .attr("type", "button")
+                                                .attr("class", "del-button")
+                                                .attr("value", "삭제")
+                                        )
+                                    )
+                            );
+                        });
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    },
+                });
+            });
+
+            $(document).on("click", ".del-button", function () {
+                console.log(this);
+                $(this).parent().parent().remove();
+            });
+        </script>
+    </head>
+
+    <body>
+        <table
+            id="list-table"
+            width="500"
+            border="1"
+        ></table>
+    </body>
+</html>

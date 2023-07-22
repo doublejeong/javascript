@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#add").click(function () {
+                    var text = $("#words").val();
+
+                    if (text == "") {
+                        return;
+                    }
+
+                    var list = $("<li class='plant'></li>");
+                    list.text(text + " (X)");
+
+                    $("#uList").append(list);
+                });
+
+                $(document).on("click", ".plant", function () {
+                    $(this).remove();
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <input
+            type="text"
+            id="words"
+        />
+        <button
+            type="button"
+            id="add"
+        >
+            추가</button
+        ><br />
+        <ui id="uList"></ui>
+        <br />
+    </body>
+</html>
